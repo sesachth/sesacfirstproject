@@ -10,10 +10,10 @@ import lombok.ToString;
 @ToString
 @Builder
 public class FeeSettlementRecord {
-	int feeRecordId;
-	int vehicleId;
-	int settledFee;
-	String tollgateStartTime;
-	String tollgateEndTime;
-	String feeSettlementTime;
+	private int feeRecordId;
+	private int vehicleId;
+	private int settledFee;
+	private String tollgateStartTime;
+	private String tollgateEndTime;
+	private String feeSettlementTime;
 }

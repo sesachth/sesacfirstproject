@@ -6,8 +6,8 @@ import lombok.ToString;
 @Getter
 @ToString
 public class OwnerAccount {
-	int accountId;
-	String accountName;
-	int totalCostToPay;
-	int remainingBalance;
+	private int accountId;
+	private String accountName;
+	private int totalCostToPay;
+	private int remainingBalance;
 }

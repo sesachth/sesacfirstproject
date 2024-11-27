@@ -6,9 +6,9 @@ import lombok.ToString;
 @Getter
 @ToString
 public class Vehicle {
-	int vehicleId;
-	int accountId;
-	String vehicleNumber;
-	String vehicleType;
-	boolean hasDisability;
+	private int vehicleId;
+	private int accountId;
+	private String vehicleNumber;
+	private String vehicleType;
+	private boolean hasDisability;
 }

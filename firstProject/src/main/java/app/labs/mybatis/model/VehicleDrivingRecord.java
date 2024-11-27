@@ -6,8 +6,8 @@ import lombok.ToString;
 @Getter
 @ToString
 public class VehicleDrivingRecord {
-	int recordId;
-	int tollgateId;
-	int vehicleId;
-	String tollgateEntryTime;
+	private int recordId;
+	private int tollgateId;
+	private int vehicleId;
+	private String tollgateEntryTime;
 }

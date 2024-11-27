@@ -10,11 +10,11 @@ import lombok.ToString;
 @ToString
 @Builder
 public class BillResult {
-	String exitTollgateName;
-	String vehicleNumber;
-	String tollgateEntryTime;
-	String vehicleType;
-	String paymentAmount;
-	String remainingBalance;
-	String unpaidAmount;
+	private String exitTollgateName;
+	private String vehicleNumber;
+	private String tollgateEntryTime;
+	private String vehicleType;
+	private String paymentAmount;
+	private String remainingBalance;
+	private String unpaidAmount;
 }

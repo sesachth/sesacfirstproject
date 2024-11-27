@@ -8,10 +8,10 @@ import lombok.ToString;
 @ToString
 @Builder
 public class Tollgate {
-	int tollgateId;
-	String tollgateName;
-	int latitude;
-	int longitude;
-	int basicFee;
-	boolean isEntry;
+	private int tollgateId;
+	private String tollgateName;
+	private int latitude;
+	private int longitude;
+	private int basicFee;
+	private boolean isEntry;
 }

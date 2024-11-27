@@ -10,11 +10,11 @@ import lombok.ToString;
 @Builder
 @ToString
 public class FeePolicy {
-    int feePolicyId;
-    Double smallDiscount;
-    Double mediumDiscount;
-    Double largeDiscount;
-    Double disabilityDiscount;
-    Double notDisabilityDiscount;
-    int costPerDistance;
+	private int feePolicyId;
+	private Double smallDiscount;
+	private Double mediumDiscount;
+	private Double largeDiscount;
+	private Double disabilityDiscount;
+	private Double notDisabilityDiscount;
+	private int costPerDistance;
 }

@@ -12,10 +12,10 @@ import lombok.ToString;
 @ToString
 @Builder
 public class OutputResult {
-	String name;
-	CarType carType;
-	int distance;
-	int notpaidmoney;
-	int calcpaidmoney;
-	List<Tollgate> tollgatemap;
+	private String name;
+	private CarType carType;
+	private int distance;
+	private int notpaidmoney;
+	private int calcpaidmoney;
+	private List<Tollgate> tollgatemap;
 }

@@ -8,13 +8,13 @@ import lombok.ToString;
 @ToString
 @Builder
 public class FeeCalculationData {
-	String tollgateEntryTime;
-	String vehicleNumber;
-	String vehicleType;
-	boolean hasDisability;
-	String tollgateName;
-	int latitude;
-	int longitude;
-	int basicFee;
-	boolean isEntry;
+	private String tollgateEntryTime;
+	private String vehicleNumber;
+	private String vehicleType;
+	private boolean hasDisability;
+	private String tollgateName;
+	private int latitude;
+	private int longitude;
+	private int basicFee;
+	private boolean isEntry;
 }
