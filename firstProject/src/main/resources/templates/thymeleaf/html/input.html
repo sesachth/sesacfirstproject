@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" th:href="@{/css/input.css}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script th:src="@{/js/input-handler.js}" defer></script>
+    <script th:src="@{/js/tollgate-map-random.js}" defer></script>
+</head>
+<body>
+	<form action="/egate/output" method="get" th:onsubmit="removeInput()">
+    <div class="signin">
+        <div class="left-side">
+            <canvas id="tollgateCanvas" width="720" height="1024"></canvas>
+        </div>
+        <div class="right-side">
+            <div class="signin-container">
+                <h1 class="title">주행정보 조회</h1>
+                <div class="input-container">
+                    <div class="input-group">
+                        <input type="text" class="input-field" placeholder="Username" name="userName">
+                    </div>
+                    <div class="input-group">
+                        <input type="password" class="input-field" placeholder="Password" name="password">
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="signin-button">내 차량 조회하기</button>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <p id="popup-message">로그인에 실패했습니다. 아이디 또는 비밀번호를 확인하세요.</p>
+            <button id="close-popup">닫기</button>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

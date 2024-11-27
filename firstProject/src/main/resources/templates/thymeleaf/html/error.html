@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/error.css}">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="ment">
+		<th:block th:text="'시스템 장애로 불편을 드려서 죄송합니다.'">
+		</th:block>
+			<div>
+				<button class="btn" th:onclick="|location.href='@{/egate/input}'|"></button>
+	
+			</div>
+	</div>
+</body>
+</html>

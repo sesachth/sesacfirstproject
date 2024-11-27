@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+/* 전체 페이지 스타일 */
+body {
+    font-family: 'Roboto', sans-serif; /* Roboto 폰트 적용 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #eef3f7; /* 밝은 회색 배경 */
+}
+
+/* 영수증 박스 */
+.receipt {
+    width: 500px; /* 폭 확장 */
+    padding: 40px; /* 상하좌우 여백 증가 */
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 그림자 진하게 */
+    border-radius: 16px; /* 둥근 모서리 추가 */
+    text-align: center;
+    border: 1px solid #ccc; /* 외곽선 색상 약간 더 흐리게 */
+}
+
+/* 제목 스타일 */
+.title, .subtitle, .vehicle-number, .heading {
+    font-size: 30px; /* 다른 텍스트는 30px 유지 */
+    font-weight: 700; /* Roboto Bold 적용 */
+    color: #333333; /* 진한 회색 */
+    margin-bottom: 25px; /* 간격 조정 */
+}
+
+/* 특정 텍스트 (20px로 변경) */
+.date-info,
+.fare-type,
+.fare-detail,
+.payment-amount,
+.balance-info,
+.unpaid-amount {
+    font-size: 20px; /* 해당 텍스트만 20px로 조정 */
+    font-weight: 300; /* Roboto Light 적용 */
+    color: #555555; /* 부드러운 회색 */
+    margin-bottom: 10px;
+}
+
+/* 차량 번호 스타일 추가 */
+.vehicle-number {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+}
+
+/* 버튼 컨테이너 */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* 버튼을 양쪽 끝에 배치 */
+    gap: 20px; /* 버튼 사이 간격 추가 */
+    margin-top: 20px; /* 컨테이너 상단 간격 */
+}
+
+/* 버튼 스타일 (Flexbox 적용) */
+.back-button {
+    display: flex; /* Flexbox 활성화 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    width: 250px; /* 버튼 가로 길이 */
+    height: 60px; /* 버튼 세로 길이 */
+    font-size: 25px; /* 글씨 크기 */
+    font-weight: 700; /* Roboto Bold 적용 */
+    color: white; /* 버튼 텍스트 색상 */
+    background-color: #2C3E50; /* Navy 색상 */
+    text-decoration: none;
+    border-radius: 45px; /* 둥근 모서리 (완전 둥글게) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+}

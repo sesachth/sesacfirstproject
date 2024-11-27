@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.btn{
+	position:absolute;
+	
+	width: 50px;
+	height: 30px;
+	top: 50px;
+	left: 200px;
+	
+	box-sizing:border-box;
+	cursor: pointer;
+
+	
+	background:url("https://pic.onlinewebfonts.com/thumbnails/icons_234149.svg") no-repeat;
+	width: 40px;
+	height: 40px;
+}
+	

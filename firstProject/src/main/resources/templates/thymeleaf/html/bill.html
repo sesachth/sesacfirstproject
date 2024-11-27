@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영수증</title>
+    <link rel="stylesheet" href="/css/bill.css">
+</head>
+<body>
+    <div class="receipt" id="receipt">
+        <!-- 톨게이트 타이틀 -->
+        <div id="title" class="title" th:text="${title} + ' 톨게이트'">*****톨게이트</div>
+
+        <!-- 결제 완료 메시지 -->
+        <div id="completeMessage" class="subtitle complete-msg">(결제가 완료되었습니다)</div>
+
+        <!-- 차량 번호 -->
+        <div id="vehicleNumber" class="vehicle-number" th:text="'차량 번호: ' + ${vehicleNumber}">차량 번호: 0000</div>
+
+        <!-- 영수증 타이틀 -->
+        <div id="receiptHeading" class="heading receipt-heading">영수증</div>
+
+        <!-- 날짜 -->
+        <div id="date" class="date-info" th:text="${date}">2024년 12월 10일</div>
+
+        <!-- 요금 정보 -->
+        <div id="vehicleType" class="fare-type" th:text="${vehicleType}">차량 종류: 소형</div>
+
+        <!-- 결제 금액 -->
+        <div id="paymentAmount" class="payment-amount" th:text="'결제 금액: ' + ${paymentAmount}">결제 금액: 0000</div>
+
+        <!-- 현재 잔액 -->
+        <div id="balance" class="balance-info" th:text="'현재 잔액: ' + ${balance}">현재 잔액: 0000</div>
+
+        <!-- 미납 금액 -->
+        <div id="unpaidAmount" class="unpaid-amount" th:text="'미납 금액: ' + ${unpaidAmount}">미납 금액: 0000</div>
+
+        <!-- 버튼 컨테이너 -->
+        <div class="button-container">
+            <!-- 영수증 출력 버튼 -->
+            <a href="#" id="printReceiptButton" class="back-button" onclick="printReceipt()">영수증 출력</a>
+
+            <!-- 뒤로가기 버튼 -->
+            <a href="input" id="backButton" class="back-button">돌아가기</a>
+        </div>
+    </div>
+
+    <script>
+        // 브라우저 인쇄 기능 실행
+        function printReceipt() {
+            window.print(); // 브라우저 인쇄창 호출
+        }
+    </script>
+</body>
+</html>

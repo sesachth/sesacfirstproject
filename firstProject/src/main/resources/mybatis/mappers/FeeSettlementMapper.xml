@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="app.labs.mybatis.dao.FeeSettlementRepository">
+
+	<select id="getTollgateList" resultType="app.labs.mybatis.model.Tollgate">
+		SELECT * FROM tollgates
+	</select>
+	
+	<select id="getAccount" parameterType="string" resultType="app.labs.mybatis.model.OwnerAccount">
+		SELECT
+			*
+		FROM
+			owner_accounts
+		WHERE
+			account_name = #{accountName}
+	</select>
+	
+	<select id="getFeeCalculationDataList" parameterType="string" resultType="app.labs.mybatis.model.FeeCalculationData">
+	SELECT
+	    vd.tollgate_entry_time,
+	    v.vehicle_number,
+	    v.vehicle_type,
+	    v.has_disability,
+	    t.tollgate_name,
+	    t.latitude,
+	    t.longitude,
+	    t.basic_fee,
+	    t.is_entry
+	FROM
+	    owner_accounts ow
+	JOIN
+	    vehicles v
+	ON
+		ow.account_id = v.account_id
+	JOIN
+	    vehicle_driving_records vd
+	ON
+		v.vehicle_id = vd.vehicle_id               
+	JOIN
+	    tollgates t
+	ON
+		vd.tollgate_id = t.tollgate_id 
+	WHERE
+	    ow.account_name = #{accountName}
+	</select>
+	
+	<update id="updateAccount">
+	UPDATE
+		owner_accounts
+	SET 
+	    total_cost_to_pay = #{totalCostToPay},
+	    remaining_balance = #{remainingBalance}
+	WHERE 
+	    account_name = #{accountName}
+	</update>
+	
+	<insert id="addFeeRecord">
+	INSERT INTO
+		fee_settlement_records
+		(
+		    fee_record_id,
+		    settled_fee,
+		    tollgate_start_time,
+		    tollgate_end_time,
+		    fee_settlement_time
+		)
+	VALUES
+		(
+		    NULL,
+		    #{settledFee},
+		    TO_DATE(#{tollgateStartTime}, 'YYYY-MM-DD HH24:MI:SS'),
+		    TO_DATE(#{tollgateEndTime}, 'YYYY-MM-DD HH24:MI:SS'),
+		    TO_DATE(#{feeSettlementTime}, 'YYYY-MM-DD HH24:MI:SS')
+		)
+	</insert>
+	
+	<select id="getFeePolicy" resultType="app.labs.mybatis.model.FeePolicy">
+         SELECT * FROM fee_policy
+    </select>
+</mapper>
